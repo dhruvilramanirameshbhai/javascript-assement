@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Booking Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <form id="bookingForm">
+    <label for="bookingType">Booking Type:</label>
+    <select id="bookingType" name="bookingType">
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+    </select><br>
+
+    <label for="userName">User Name:</label>
+    <input type="text" id="userName" name="userName" required><br>
+
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="noOfPersons">Number of Persons:</label>
+    <input type="number" id="noOfPersons" name="noOfPersons" min="1" required><br>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required><br>
+
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time" required><br>
+
+    <label for="slot">Slot:</label>
+    <select id="slot" name="slot">
+      <option value="morning">Morning</option>
+      <option value="afternoon">Afternoon</option>
+      <option value="evening">Evening</option>
+    </select><br>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      // Fetching form values
+      const bookingType = document.getElementById('bookingType').value;
+      const userName = document.getElementById('userName').value;
+      const mobileNumber = document.getElementById('mobileNumber').value;
+      const email = document.getElementById('email').value;
+      const noOfPersons = document.getElementById('noOfPersons').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const slot = document.getElementById('slot').value;
+
+      // Displaying the collected information (you can modify this part)
+      alert(`Booking Type: ${bookingType}\nUser Name: ${userName}\nMobile Number: ${mobileNumber}\nEmail: ${email}\nNumber of Persons: ${noOfPersons}\nDate: ${date}\nTime: ${time}\nSlot: ${slot}`);
+    }
+  </script>
+</body>
+</html>
